@@ -106,7 +106,9 @@ class SpatioTemporalResBlock(nn.Module):
 
     def forward(self, x):
         res = self.relu1(self.bn1(self.conv1(x)))    
-        res = self.bn2(self.conv2(res))
+        #res = self.bn2(self.conv2(res))
+		
+		res = self.bn2(self.conv2(res))
 
         if self.downsample:
             x = self.downsamplebn(self.downsampleconv(x))
